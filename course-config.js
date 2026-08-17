@@ -21,6 +21,12 @@ window.COURSE_CONFIG = {
     ppt6: "PPT/6-飞升入定-部署.pptx",
     ppt7: "",
     video1: "",
+    video2: "",
+    video3: "",
+    video4: "",
+    video5: "",
+    video6: "",
+    video7: "",
     labs: ""
   },
 
@@ -35,11 +41,11 @@ window.COURSE_CONFIG = {
 
   chapters: [
     { id: 1, title: "导论", subtitle: "课程介绍与团队介绍", weeks: 1, description: "认识课程目标、学习方式和协作团队，为后续的系统实践建立共同语境。", outcomes: ["理解课程学习闭环", "了解团队与资料入口"], resources: [{ label: "课程导论课件", link: "ppt1" }, { label: "课程视频", link: "video1" }] },
-    { id: 2, title: "云技术导览", subtitle: "以游戏为线的云技术导览及云架构总览", weeks: 1, description: "跟随在线游戏的成长路径，建立从单机原型到云平台的整体架构视角。", outcomes: ["看懂在线系统请求路径", "理解云技术在系统中的位置"], resources: [{ label: "云架构总览课件", link: "ppt2" }, { label: "书籍第一章", link: "chapter1Book" }] },
-    { id: 3, title: "双雄对决", subtitle: "网络基础：从单机到 CS 架构", weeks: 2, description: "从单机程序演化到客户端—服务器架构，完成网络通信和最小在线闭环。", outcomes: ["理解 CS 架构与网络通信", "建立双人在线对战原型"], resources: [{ label: "网络基础课件", link: "ppt3" }, { label: "书籍第二章", link: "chapter2Book" }] },
-    { id: 4, title: "英雄集结", subtitle: "并发：Go 语言高并发", weeks: 4, description: "在更多连接与请求同时到达时，学习用 Go 组织并发、保护共享状态并识别性能瓶颈。", outcomes: ["掌握 Go 并发基本模式", "分析共享状态与性能问题"], resources: [{ label: "并发课件", link: "ppt4" }, { label: "书籍第三章", link: "chapter3Book" }] },
-    { id: 5, title: "裂土封疆", subtitle: "分布式：数据库与逻辑分片", weeks: 3, description: "当单机容量不再足够，系统开始引入数据库、逻辑分片与跨节点协作。", outcomes: ["理解数据持久化与分片", "分析多机协作的代价"], resources: [{ label: "分布式课件", link: "ppt5" }, { label: "书籍第四章", link: "chapter4Book" }] },
-    { id: 6, title: "飞升入定", subtitle: "部署：容器与 Kubernetes", weeks: 3, description: "将服务标准化交付并交由平台部署、调度、扩缩容和自愈。", outcomes: ["完成容器化交付", "理解 Kubernetes 基本部署方式"], resources: [{ label: "部署课件", link: "ppt6" }, { label: "书籍第五章", link: "chapter5Book" }] },
-    { id: 7, title: "原理深入", subtitle: "容器隔离、HPA 与 Serverless", weeks: 2, description: "下沉到云原生运行机制，理解隔离、弹性控制和按需执行背后的基本原理。", outcomes: ["理解容器隔离机制", "理解 HPA 与 Serverless 原理"], resources: [{ label: "本章课件", link: "ppt7" }, { label: "书籍第六章", link: "chapter6Book" }] }
+    { id: 2, title: "云技术导览", subtitle: "以游戏为线的云技术导览及云架构总览", weeks: 1, description: "跟随在线游戏的成长路径，建立从单机原型到云平台的整体架构视角。", outcomes: ["看懂在线系统请求路径", "理解云技术在系统中的位置"], resources: [{ label: "云架构总览课件", link: "ppt2" }, { label: "书籍第一章", link: "chapter1Book" }, { label: "本章视频", link: "video2" }] },
+    { id: 3, title: "双雄对决", subtitle: "网络基础：从单机到 CS 架构", weeks: 2, description: "从单机程序演化到客户端—服务器架构，完成网络通信和最小在线闭环。", outcomes: ["理解 CS 架构与网络通信", "建立双人在线对战原型"], resources: [{ label: "网络基础课件", link: "ppt3" }, { label: "书籍第二章", link: "chapter2Book" }, { label: "本章视频", link: "video3" }] },
+    { id: 4, title: "英雄集结", subtitle: "并发：Go 语言高并发", weeks: 4, description: "在更多连接与请求同时到达时，学习用 Go 组织并发、保护共享状态并识别性能瓶颈。", outcomes: ["掌握 Go 并发基本模式", "分析共享状态与性能问题"], resources: [{ label: "并发课件", link: "ppt4" }, { label: "书籍第三章", link: "chapter3Book" }, { label: "本章视频", link: "video4" }] },
+    { id: 5, title: "裂土封疆", subtitle: "分布式：数据库与逻辑分片", weeks: 3, description: "当单机容量不再足够，系统开始引入数据库、逻辑分片与跨节点协作。", outcomes: ["理解数据持久化与分片", "分析多机协作的代价"], resources: [{ label: "分布式课件", link: "ppt5" }, { label: "书籍第四章", link: "chapter4Book" }, { label: "本章视频", link: "video5" }] },
+    { id: 6, title: "飞升入定", subtitle: "部署：容器与 Kubernetes", weeks: 3, description: "将服务标准化交付并交由平台部署、调度、扩缩容和自愈。", outcomes: ["完成容器化交付", "理解 Kubernetes 基本部署方式"], resources: [{ label: "部署课件", link: "ppt6" }, { label: "书籍第五章", link: "chapter5Book" }, { label: "本章视频", link: "video6" }] },
+    { id: 7, title: "原理深入", subtitle: "容器隔离、HPA 与 Serverless", weeks: 2, description: "下沉到云原生运行机制，理解隔离、弹性控制和按需执行背后的基本原理。", outcomes: ["理解容器隔离机制", "理解 HPA 与 Serverless 原理"], resources: [{ label: "本章课件", link: "ppt7" }, { label: "书籍第六章", link: "chapter6Book" }, { label: "本章视频", link: "video7" }] }
   ]
 };
