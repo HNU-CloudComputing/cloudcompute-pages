@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>课程实验｜云计算技术实践</title>
+    <meta name="description" content="湖南大学云计算技术实践课程实验。" />
+    <link rel="stylesheet" href="styles.css?v=35" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="site-header wrap-container"><div class="wrap header-inner">
+      <a class="header-title" href="index.html"><span class="header-logos"><img class="logo-hnu" src="assets/hnu-logo.png" width="38" height="38" alt="湖南大学" /><img class="logo-csee" src="assets/csee-logo.png" width="49" height="49" alt="湖南大学计算机学院" /></span><span>云计算技术实践</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">菜单</button>
+      <nav id="site-nav" class="site-nav" aria-label="课程导航"><a href="index.html">课程概览</a><a href="staff.html">课程团队</a><a href="labs.html" aria-current="page">课程实验</a><a href="videos.html">教学视频</a><a href="materials.html">课程资料</a></nav>
+    </div></header>
+
+    <main id="main">
+      <section class="subpage-head lab-page-head wrap-container"><div class="wrap">
+        <p class="head-subtitle green">COURSE LABS</p>
+        <h1>课程实验</h1>
+        <p class="lab-intro">四组课程实验围绕同一个在线游戏系统逐步展开。实验一建立双人对战的网络闭环；实验二将系统扩展为多人实时世界；实验三把游戏世界拆分为多地图、多节点的分布式系统；实验四将整套服务部署到 Kubernetes，并围绕弹性、故障恢复和资源成本进行调优。</p>
+        <p class="lab-intro">每组实验对应教材相关章节，并提供可直接运行的 Go 程序骨架。学生先阅读实验说明，在预留的 TODO 位置补充核心逻辑，再通过自动测试、运行日志和故障模拟检查系统行为。完成实验后，学生结合运行结果，分析相关机制在系统中的作用和协同关系。</p>
+      </div></section>
+
+      <section class="lab-repository-section wrap-container"><div class="wrap">
+        <h2>实验怎么做</h2>
+        <div class="lab-repository-layout">
+          <pre class="lab-tree" aria-label="实验仓库目录结构"><code>cloud-compute-book-code/
+└── Lab/
+    ├── Lab1/
+    │   ├── README.md
+    │   ├── student/
+    │   └── test/
+    ├── Lab2/
+    ├── Lab3/
+    └── Lab4/</code></pre>
+          <div class="lab-repository-copy">
+            <p>仓库中的 Lab1 至 Lab4 分别对应四组实验，目录组织方式完全一致。进入实验后，先阅读 <code>README.md</code>，了解实验目标、任务分解、运行方法和评分标准。</p>
+            <p><code>student/</code> 中已经提供可以运行的程序骨架，关键位置以 TODO 标出；学生在这些位置补充代码，不需要从零搭建项目。完成后运行 <code>test/</code> 中的自动测试，查看各用例的通过情况和得分，并根据失败位置回到代码定位问题。</p>
+            <a href="https://gitee.com/hnu-cloudcomputing/cloud-compute-book-code" target="_blank" rel="noreferrer">查看实验代码仓库</a>
+          </div>
+        </div>
+      </div></section>
+
+      <section class="lab-list-section wrap-container"><div class="wrap">
+        <h2>实验内容</h2>
+        <div class="lab-list">
+          <article class="lab-row" id="lab-1">
+            <header class="lab-row-number"><span>LAB 01</span><p>对应教材第 1 章</p></header>
+            <div class="lab-row-content">
+              <h3>双人对战的网络闭环</h3>
+              <p>实验一构造一个最小但完整的客户端/服务器系统。两个客户端通过 TCP 连接同一个游戏服务器；客户端把移动、攻击和使用药水等操作编码为 JSON 消息，服务器分配玩家身份，并统一维护坐标、生命值和回合状态。</p>
+              <p>学生需要完成 TCP 监听与连接、字节流上的连续消息解析，以及移动和攻击的服务器权威判定。自动测试会验证连接握手、越界移动、攻击距离和断线处理；全部通过后，两个客户端可以经由服务器完成一场完整对战。</p>
+            </div>
+            <a class="lab-row-action" href="https://gitee.com/hnu-cloudcomputing/cloud-compute-book-code/tree/master/Lab/Lab1" target="_blank" rel="noreferrer">实验说明</a>
+          </article>
+
+          <article class="lab-row" id="lab-2">
+            <header class="lab-row-number"><span>LAB 02</span><p>对应教材第 2 章</p></header>
+            <div class="lab-row-content">
+              <h3>多人世界中的并发控制</h3>
+              <p>实验二把双人回合制对战扩展为多人实时世界。服务器为每个连接启动独立的 Goroutine，并周期性广播世界快照；客户端同时处理键盘输入和服务器推送，使玩家能够实时看到其他角色的移动、攻击、死亡与复活。</p>
+              <p>多人活动会并发读写同一份世界状态。学生需要为加入、离开、移动、攻击和快照生成设计并发安全接口，并正确处理延迟复活时的锁释放。实验结合多人交互和 Go race detector，检查数据竞争、状态覆盖与死锁。</p>
+            </div>
+            <a class="lab-row-action" href="https://gitee.com/hnu-cloudcomputing/cloud-compute-book-code/tree/master/Lab/Lab2" target="_blank" rel="noreferrer">实验说明</a>
+          </article>
+
+          <article class="lab-row" id="lab-3">
+            <header class="lab-row-number"><span>LAB 03</span><p>对应教材第 3–4 章</p></header>
+            <div class="lab-row-content">
+              <h3>多地图与多节点协同</h3>
+              <p>实验三把单地图、单节点的世界扩展为三张地图和三个逻辑服务节点。每张地图独立维护玩家、NPC、宝物和版本，并拥有主节点与副本节点；玩家切换地图时，系统必须把操作路由到当前地图的主节点。</p>
+              <p>学生需要用一致性哈希规划地图放置，以 Gossip 传播成员状态，通过 Raft 提交地图归属变更，并用两阶段提交保证跨地图交易的一致性。管理工具可以模拟节点故障，观察副本提升、路由修正和检查点恢复如何共同完成。</p>
+            </div>
+            <a class="lab-row-action" href="https://gitee.com/hnu-cloudcomputing/cloud-compute-book-code/tree/master/Lab/Lab3" target="_blank" rel="noreferrer">实验说明</a>
+          </article>
+
+          <article class="lab-row" id="lab-4">
+            <header class="lab-row-number"><span>LAB 04</span><p>对应教材第 5–6 章</p></header>
+            <div class="lab-row-content">
+              <h3>Kubernetes 上的部署与弹性运行</h3>
+              <p>实验四把已经完成的分布式游戏部署到 Kubernetes。学生需要为 gateway、coordinator、三个地图服务和 Redis 构建镜像，并配置 Deployment、StatefulSet、Service、资源声明、健康检查、配置注入与 RBAC。</p>
+              <p>系统跑起来后，还要配置 HPA、流量排空和 Pod 删除代价，并在不同压力与故障条件下反复调优。评分关注空闲与低压稳定、高压扩容、状态一致、故障恢复和资源使用，要求学生说明自己的部署策略如何平衡可用性、弹性与成本。</p>
+            </div>
+            <a class="lab-row-action" href="https://gitee.com/hnu-cloudcomputing/cloud-compute-book-code/tree/master/Lab/Lab4" target="_blank" rel="noreferrer">实验说明</a>
+          </article>
+        </div>
+      </div></section>
+    </main>
+
+    <footer class="site-footer wrap-container"><div class="wrap footer-inner"><p class="footer-copyright">湖南大学 · 云计算课程小组 2026 版权所有</p></div></footer>
+    <script src="course-config.js?v=33"></script><script src="script.js?v=33"></script>
+  </body>
+</html>

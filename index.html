@@ -3,202 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#7f1712" />
-    <title>云计算技术实践｜从在线游戏到云原生系统</title>
-    <meta name="description" content="湖南大学云计算实践课程。以在线游戏服务端为贯穿案例，统一提供配套教材、课程课件、视频讲解与实践代码。" />
-    <meta property="og:title" content="云计算技术实践｜从在线游戏到云原生系统" />
-    <meta property="og:description" content="沿着一个在线系统的成长，理解网络、并发、分布式与云原生。" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/course-social-card.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>课程概览｜云计算技术实践</title>
+    <meta name="description" content="湖南大学云计算技术实践课程概览。" />
+    <link rel="stylesheet" href="styles.css?v=34" />
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
-
-    <div class="course-ribbon">
-      <div class="shell ribbon-inner">
-        <span><i></i> 湖南大学 · 实事求是，敢为人先</span>
-        <a href="#course-kit">教材、课件与视频已统一整理 <b aria-hidden="true">→</b></a>
+    <header class="site-header wrap-container">
+      <div class="wrap header-inner">
+        <a class="header-title" href="index.html"><span class="header-logos"><img class="logo-hnu" src="assets/hnu-logo.png" width="38" height="38" alt="湖南大学" /><img class="logo-csee" src="assets/csee-logo.png" width="49" height="49" alt="湖南大学计算机学院" /></span><span>云计算技术实践</span></a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">菜单</button>
+        <nav id="site-nav" class="site-nav" aria-label="课程导航">
+          <a href="index.html" aria-current="page">课程概览</a><a href="staff.html">课程团队</a><a href="labs.html">课程实验</a><a href="videos.html">教学视频</a><a href="materials.html">课程资料</a>
+        </nav>
       </div>
-    </div>
-
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="湖南大学云计算技术实践课程主页">
-        <img class="brand-emblem" src="assets/hnu-emblem.jpg" width="43" height="43" alt="湖南大学校徽" />
-        <span class="brand-copy"><strong>云计算技术实践</strong><small>HUNAN UNIVERSITY · COURSE HUB</small></span>
-      </a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">菜单</button>
-      <nav id="site-nav" class="site-nav" aria-label="主导航">
-        <a href="#about">课程介绍</a>
-        <a href="#curriculum">课程大纲</a>
-        <a href="#course-kit">学习资源</a>
-        <a href="#projects">实践主线</a>
-        <a class="nav-cta" href="" data-link="codeRepository">课程代码 <span aria-hidden="true">↗</span></a>
-      </nav>
     </header>
 
     <main id="main">
-      <section id="top" class="hero">
-        <div class="shell hero-layout">
-          <div class="hero-copy">
-            <p class="eyebrow">HUNAN UNIVERSITY · CLOUD COMPUTING PRACTICE</p>
-            <h1>从一个在线游戏，<br />学会构建<span>云上系统。</span></h1>
-            <p class="hero-lead">不从术语清单开始。让系统在真实压力下不断演进，由此理解网络、并发、分布式与云原生为什么出现，又解决了什么问题。</p>
-            <div class="hero-actions">
-              <a class="button button-accent" href="#curriculum">进入课程 <span aria-hidden="true">→</span></a>
-              <a class="button button-ghost" href="" data-link="fullBook">阅读配套教材 <span aria-hidden="true">↗</span></a>
-            </div>
-            <div class="hero-metrics" role="list" aria-label="课程概要">
-              <div><strong>7</strong><span>教学模块</span></div>
-              <div><strong>16</strong><span>周学习路径</span></div>
-              <div><strong>4</strong><span>系统演进阶段</span></div>
-            </div>
-          </div>
-
-          <div class="system-board" role="img" aria-label="在线系统演进路线图">
-            <div class="board-head"><span>CASE / 01</span><b>ONLINE SYSTEM</b><i>RUNNING</i></div>
-            <p class="board-caption">同一个服务端，在压力中持续演进</p>
-            <ol class="system-route">
-              <li class="is-active"><span>01</span><div><small>PROTOTYPE</small><strong>双人对战</strong></div><b>最小闭环</b></li>
-              <li><span>02</span><div><small>CONCURRENCY</small><strong>英雄集结</strong></div><b>单机并发</b></li>
-              <li><span>03</span><div><small>DISTRIBUTED</small><strong>裂土封疆</strong></div><b>多机协作</b></li>
-              <li><span>04</span><div><small>CLOUD NATIVE</small><strong>飞升入定</strong></div><b>平台治理</b></li>
-            </ol>
-            <div class="board-foot"><span>READ</span><i></i><span>BUILD</span><i></i><span>MEASURE</span><i></i><span>IMPROVE</span></div>
-          </div>
+      <section class="page-head overview-hero wrap-container">
+        <div class="wrap">
+          <h1>云计算技术实践</h1>
+          <p class="course-description">云计算技术实践是一门面向希望系统理解并亲手构建现代在线服务的本科实践课程。课程以一个可运行的在线游戏服务端为贯穿案例，从最小的双人对战原型出发，逐步讲解系统在连接规模、并发状态、单机容量、节点故障和负载波动等压力下的演进过程。讲授内容包括客户端—服务器通信、服务器权威裁决与状态同步，Go 并发模型、锁与资源复用，分片、一致性哈希、Gossip、2PC 与 Raft，以及容器化交付、Kubernetes 编排、HPA 和 Serverless 等关键机制。每个阶段均配有代码演示和递进式实验，学生将在指导下运行系统、记录延迟、吞吐和资源占用，修改关键机制并比较结果。课程结束时，学生将能够从零构建并部署一个具备网络通信、并发处理、分布式协作和弹性伸缩能力的在线服务，并形成从现象识别问题、选择机制、权衡性能、正确性、可用性与成本，再通过实验验证方案的系统工程方法。这套方法同样可以迁移到在线协作、电商平台和大模型服务等其他系统。本课程适合具备基本编程能力和数据结构知识的学习者；接触过计算机网络和操作系统则更佳。</p>
         </div>
       </section>
 
-      <section class="course-facts" aria-label="课程定位">
-        <div class="shell facts-grid">
-          <div><span>课程定位</span><strong>本科云计算实践课程</strong></div>
-          <div><span>贯穿案例</span><strong>在线游戏服务端</strong></div>
-          <div><span>内容形态</span><strong>书籍 · 课件 · 视频 · 代码</strong></div>
-          <div><span>学习闭环</span><strong>理解 · 实现 · 测量 · 改进</strong></div>
+      <figure class="cloud-overview-figure wrap-container">
+        <div class="wrap">
+          <img src="images/cloud-computing-overview.png" width="1672" height="941" alt="云计算概览：访问者与应用通过网络向云平台发出请求，云平台集中提供共享的计算、存储和网络资源，并支持按需扩容与故障恢复。" />
         </div>
-      </section>
-
-      <section id="about" class="manifesto section shell">
-        <div class="section-label"><span>01</span><p>ABOUT THE COURSE</p></div>
-        <div class="manifesto-main">
-          <p class="overline">一条主线，而不是一组孤立知识点</p>
-          <h2>云计算不是从“云”开始，<br />而是从一个系统<span>撑不住</span>开始。</h2>
-          <p class="manifesto-lead">我们把复杂概念放回它们诞生的现场：连接变多、状态变复杂、机器会故障、资源会波动。学习者不是记住答案，而是亲手走过系统为什么必须改变的过程。</p>
-        </div>
-        <div class="principle-grid">
-          <article><b>01</b><h3>问题先于名词</h3><p>先观察系统遇到的瓶颈，再引出解决它的机制与代价。</p></article>
-          <article><b>02</b><h3>机制落到实现</h3><p>把网络、并发和调度写进可运行、可观察的代码。</p></article>
-          <article><b>03</b><h3>结果必须验证</h3><p>用延迟、吞吐和故障场景判断方案是否真的有效。</p></article>
-        </div>
-      </section>
-
-      <section id="curriculum" class="curriculum section" aria-labelledby="curriculum-title">
-        <div class="shell curriculum-layout">
-          <aside class="curriculum-intro">
-            <div class="section-label light"><span>02</span><p>CURRICULUM</p></div>
-            <h2 id="curriculum-title">按系统演进，<br />完成七个模块。</h2>
-            <p>每个模块把讲义、教材、视频和学习成果放在一起。无需在不同页面之间寻找资料。</p>
-            <a class="text-link light-link" href="#course-kit">查看全部课程资源 <span>↓</span></a>
-          </aside>
-          <div id="module-list" class="module-list" role="region" aria-label="课程模块"></div>
-        </div>
-      </section>
-
-      <section id="course-kit" class="course-kit section shell">
-        <div class="section-heading">
-          <div><div class="section-label"><span>03</span><p>COURSE KIT</p></div><h2>一套课程，四种学习媒介。</h2></div>
-          <p>同一套知识结构贯穿教材、课件、视频和代码。你可以从任意媒介进入，但始终沿着同一条主线学习。</p>
-        </div>
-
-        <div class="kit-grid">
-          <article class="book-feature">
-            <div class="book-cover" aria-hidden="true">
-              <div class="cover-top">HUNAN UNIVERSITY</div>
-              <p>云计算<br />技术实践</p>
-              <span>从在线游戏到<br />云原生系统</span>
-              <div class="cover-route"><i></i><i></i><i></i><i></i></div>
-              <b>CLOUD COMPUTING<br />IN PRACTICE</b>
-            </div>
-            <div class="feature-copy">
-              <p class="resource-index">01 / COMPANION BOOK</p>
-              <h3>配套教材</h3>
-              <p>六章完整教材，把问题、机制、代码与实验组织为一条连续的教学链。</p>
-              <div class="feature-meta"><span>6 个章节</span><span>完整 PDF</span><span>按章阅读</span></div>
-              <div class="feature-actions"><a class="button button-dark" href="" data-link="fullBook">阅读全书 <span>↗</span></a><a class="text-link" href="#book-files">按章选择 <span>↓</span></a></div>
-            </div>
-          </article>
-
-          <div class="kit-stack">
-            <article class="kit-card slides-card">
-              <div class="kit-card-head"><span class="resource-index">02 / SLIDES</span><b>6 份</b></div>
-              <h3>课程课件</h3><p>用于课堂讲授的关键图解、技术路径与阶段总结。</p>
-              <a href="#slides">浏览全部课件 <span>↓</span></a>
-            </article>
-            <article class="kit-card video-card">
-              <div class="kit-card-head"><span class="resource-index">03 / VIDEO</span><b class="status-dot">持续更新</b></div>
-              <h3>视频讲解</h3><p>围绕章节难点与系统演进路径，提供配套课程讲解。</p>
-              <button type="button" class="coming-soon">首批视频即将开放</button>
-            </article>
-            <article class="kit-card code-card">
-              <div class="kit-card-head"><span class="resource-index">04 / CODE</span><b>GITEE</b></div>
-              <h3>课程代码</h3><p>项目源码、运行说明，以及后续实验所需的实践环境。</p>
-              <a href="" data-link="codeRepository">访问课程仓库 <span>↗</span></a>
-            </article>
-          </div>
-        </div>
-
-        <section id="slides" class="resource-library" aria-labelledby="slides-title">
-          <div class="library-head"><div><span>SLIDE LIBRARY</span><h3 id="slides-title">课程课件</h3></div><p>下载后可用于课堂学习与章节复习</p></div>
-          <div id="slide-list" class="file-list"></div>
-        </section>
-
-        <section id="book-files" class="resource-library" aria-labelledby="books-title">
-          <div class="library-head"><div><span>BOOK LIBRARY</span><h3 id="books-title">教材章节</h3></div><p>按章节进入对应的完整阅读材料</p></div>
-          <div id="book-chapter-list" class="file-list"></div>
-        </section>
-      </section>
-
-      <section class="learning-loop section">
-        <div class="shell">
-          <div class="loop-title"><div class="section-label light"><span>04</span><p>HOW TO LEARN</p></div><h2>每个阶段，都走完一次闭环。</h2></div>
-          <ol class="loop-steps">
-            <li><span>01</span><h3>阅读</h3><p>从教材建立完整机制认识</p></li>
-            <li><span>02</span><h3>理解</h3><p>借助课件与视频抓住重点</p></li>
-            <li><span>03</span><h3>实现</h3><p>在同一项目中完成系统演进</p></li>
-            <li><span>04</span><h3>验证</h3><p>用指标和故障场景检验选择</p></li>
-          </ol>
-        </div>
-      </section>
-
-      <section id="projects" class="projects section shell">
-        <div class="section-heading projects-heading">
-          <div><div class="section-label"><span>05</span><p>THE RUNNING CASE</p></div><h2>同一个项目，四次进化。</h2></div>
-          <p>课程不是做四个互不相关的小作业，而是持续演进一个在线服务端。每次变化都来自上一阶段暴露的真实约束。</p>
-        </div>
-        <div class="project-line">
-          <article><span>PHASE 01</span><h3>双雄对决</h3><p>建立网络通信与服务器权威裁决的最小闭环。</p><b>最小原型</b></article>
-          <article><span>PHASE 02</span><h3>英雄集结</h3><p>处理大量连接、并发执行与共享状态。</p><b>单机并发</b></article>
-          <article><span>PHASE 03</span><h3>裂土封疆</h3><p>完成持久化、逻辑分片与跨节点协作。</p><b>多机协作</b></article>
-          <article><span>PHASE 04</span><h3>飞升入定</h3><p>完成容器化、编排、弹性与持续治理。</p><b>云原生平台</b></article>
-        </div>
-      </section>
-
-      <section class="closing shell">
-        <div><p>START WITH THE SYSTEM</p><h2>准备好让第一个系统<br />真正运行起来了吗？</h2></div>
-        <div><p>从课程导论开始，先理解整条演进主线，再进入第一阶段实践。</p><div class="closing-actions"><a class="button button-accent" href="#curriculum">从第 1 讲开始 <span>→</span></a><a class="button button-ghost" href="" data-link="codeRepository">查看课程代码 <span>↗</span></a></div></div>
-      </section>
+      </figure>
     </main>
 
-    <footer class="site-footer">
-      <div class="shell footer-main">
-        <a class="brand footer-brand" href="#top"><img class="brand-emblem" src="assets/hnu-emblem.jpg" width="43" height="43" alt="湖南大学校徽" /><span class="brand-copy"><strong>云计算技术实践</strong><small>HUNAN UNIVERSITY · COURSE HUB</small></span></a>
-        <p>一门以在线游戏服务端为贯穿案例的云计算实践课程。</p>
-        <nav aria-label="页脚导航"><a href="#about">课程介绍</a><a href="#curriculum">课程大纲</a><a href="#course-kit">学习资源</a><a href="" data-link="codeRepository">Gitee ↗</a></nav>
-      </div>
-      <div class="shell footer-bottom"><span>HUNAN UNIVERSITY · CLOUD COMPUTING COURSE</span><span>READ → BUILD → MEASURE → IMPROVE</span></div>
-    </footer>
-
-    <script src="course-config.js"></script>
-    <script src="script.js"></script>
+    <footer class="site-footer wrap-container"><div class="wrap footer-inner"><p class="footer-copyright">湖南大学 · 云计算课程小组 2026 版权所有</p></div></footer>
+    <script src="course-config.js?v=19"></script><script src="script.js?v=19"></script>
   </body>
 </html>

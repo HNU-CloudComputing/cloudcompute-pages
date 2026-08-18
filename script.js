@@ -16,7 +16,7 @@ siteNav?.querySelectorAll('a').forEach((link) => {
   });
 });
 
-function linkAttrs(url) {
+function externalAttrs(url) {
   return url.startsWith('http') ? ' target="_blank" rel="noreferrer"' : '';
 }
 
@@ -37,68 +37,75 @@ function hydrateConfiguredLinks() {
   });
 }
 
-function resourceLink(resource) {
-  const url = config.links[resource.link] || '';
-  const type = resource.label.includes('课件') ? 'SLIDES' : resource.label.includes('视频') ? 'VIDEO' : resource.label.includes('书') ? 'BOOK' : 'RESOURCE';
-  if (!url) return `<span class="module-resource unavailable"><small>${type}</small>${resource.label}<b>待上线</b></span>`;
-  return `<a class="module-resource" href="${url}"${linkAttrs(url)}><small>${type}</small>${resource.label}<b>↗</b></a>`;
-}
-
-function renderCurriculum() {
-  const moduleList = document.querySelector('#module-list');
-  if (!moduleList || !config) return;
-
-  let startWeek = 1;
-  moduleList.innerHTML = config.chapters.map((chapter, index) => {
-    const firstWeek = startWeek;
-    const lastWeek = startWeek + chapter.weeks - 1;
-    startWeek += chapter.weeks;
-    const resources = chapter.resources.map(resourceLink).join('');
-    return `<article class="module ${index === 0 ? 'is-open' : ''}">
-      <button class="module-toggle" type="button" aria-expanded="${index === 0}" aria-controls="module-panel-${chapter.id}">
-        <span class="module-number">${String(chapter.id).padStart(2, '0')}</span>
-        <span class="module-title"><small>第 ${firstWeek}–${lastWeek} 周</small><strong>${chapter.title}</strong><em>${chapter.subtitle}</em></span>
-        <span class="module-action"><i></i></span>
-      </button>
-      <div id="module-panel-${chapter.id}" class="module-panel">
-        <div class="module-description"><p>${chapter.description}</p><div>${chapter.outcomes.map((outcome) => `<span>✓ ${outcome}</span>`).join('')}</div></div>
-        <div class="module-resources">${resources}</div>
-      </div>
-    </article>`;
+function renderLabs() {
+  const list = document.querySelector('#lab-list');
+  if (!list) return;
+  list.innerHTML = config.labs.map((lab) => {
+    const url = config.links[lab.link] || '';
+    const action = url
+      ? '<a href="' + url + '"' + externalAttrs(url) + '>实验说明</a>'
+      : '<span class="inactive-link">链接待配置</span>';
+    return '<article class="lab-item">' +
+      '<p class="item-kicker">LAB ' + String(lab.id).padStart(2, '0') + ' / ' + lab.weeks + '</p>' +
+      '<h3>' + lab.title + '</h3>' +
+      '<p class="lab-subtitle">' + lab.subtitle + '</p>' +
+      '<p>' + lab.description + '</p>' +
+      '<p class="lab-skills">' + lab.skills + '</p>' +
+      action +
+    '</article>';
   }).join('');
-
-  moduleList.querySelectorAll('.module-toggle').forEach((button) => {
-    button.addEventListener('click', () => {
-      const module = button.closest('.module');
-      const isOpen = module.classList.toggle('is-open');
-      button.setAttribute('aria-expanded', String(isOpen));
-    });
-  });
 }
 
-function fileItem(number, title, linkKey, action) {
+function renderVideos() {
+  const list = document.querySelector('#video-list');
+  if (!list) return;
+  list.innerHTML = config.videos.map((video) => {
+    const slideUrl = config.links[video.slides] || '';
+    const slide = slideUrl
+      ? '<a href="' + slideUrl + '"' + externalAttrs(slideUrl) + '>' + video.slideLabel + '</a>'
+      : '<span class="inactive-link">暂未提供</span>';
+    const topics = video.topics.map((topic) => '<li>' + topic + '</li>').join('');
+    return '<article class="lecture-row" role="row">' +
+      '<div class="lecture-number" role="cell"><strong>' + video.id + '</strong><span>' + video.kind + '</span></div>' +
+      '<div class="lecture-topic" role="cell"><h2>' + video.title + '</h2><ul>' + topics + '</ul></div>' +
+      '<div class="lecture-slides" role="cell">' + slide + '</div>' +
+      '<div class="lecture-recording" role="cell"><a href="' + video.url + '"' + externalAttrs(video.url) + ' aria-label="在 B 站观看：' + video.title + '">' +
+        '<img src="' + video.thumbnail + '" alt="' + video.title + '视频封面" width="480" height="270" loading="lazy" />' +
+        '<span class="video-play" aria-hidden="true"></span><span class="video-duration">' + video.duration + '</span>' +
+      '</a></div>' +
+    '</article>';
+  }).join('');
+}
+
+function simpleItem(number, title, linkKey, action) {
   const url = config.links[linkKey] || '';
-  if (!url) return `<span class="file-item unavailable"><small>${number}</small><strong>${title}</strong><b>待上线</b></span>`;
-  return `<a class="file-item" href="${url}"${linkAttrs(url)}><small>${number}</small><strong>${title}</strong><b>${action} ↗</b></a>`;
+  if (!url) return '<span class="simple-item is-unavailable"><b>' + number + '</b><span>' + title + '</span><small>待提供</small></span>';
+  return '<a class="simple-item" href="' + url + '"' + externalAttrs(url) + '><b>' + number + '</b><span>' + title + '</span><small>' + action + '</small></a>';
 }
 
 function renderLibraries() {
-  const slideList = document.querySelector('#slide-list');
-  const bookList = document.querySelector('#book-chapter-list');
-
-  if (slideList) {
-    slideList.innerHTML = config.chapters.map((chapter) => fileItem(
-      String(chapter.id).padStart(2, '0'), chapter.subtitle, `ppt${chapter.id}`, '下载 PPT'
+  const slides = document.querySelector('#slide-list');
+  const books = document.querySelector('#book-chapter-list');
+  if (slides) {
+    slides.innerHTML = config.chapters.map((chapter) => simpleItem(
+      String(chapter.id).padStart(2, '0'), chapter.subtitle, 'ppt' + chapter.id, '下载'
     )).join('');
   }
-
-  if (bookList) {
-    bookList.innerHTML = config.books.map((book, index) => fileItem(
-      String(index + 1).padStart(2, '0'), book.title, book.link, '阅读章节'
+  if (books) {
+    books.innerHTML = config.books.map((book, index) => simpleItem(
+      String(index + 1).padStart(2, '0'), book.title, book.link, '阅读'
     )).join('');
   }
 }
 
+function renderSharedFooter() {
+  document.querySelectorAll('.site-footer').forEach((footer) => {
+    footer.innerHTML = '<div class="wrap footer-inner"><p class="footer-copyright">湖南大学 · 云计算课程小组 2026 版权所有</p></div>';
+  });
+}
+
 hydrateConfiguredLinks();
-renderCurriculum();
+renderLabs();
+renderVideos();
 renderLibraries();
+renderSharedFooter();

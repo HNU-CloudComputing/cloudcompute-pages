@@ -1,8 +1,9 @@
 docs/
-dist/
 
 *.pptx
 *.pdf
 
 PPT/
 PDF/
+
+.spec-workflow/
