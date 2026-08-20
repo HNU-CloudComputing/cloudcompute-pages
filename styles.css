@@ -28,12 +28,13 @@ button { font: inherit; }
 
 .site-header { padding: 2em 0; }
 .header-inner { display: inline-flex; align-items: center; justify-content: space-between; gap: 2em; }
-.header-title { display: inline-flex; align-items: center; gap: .7em; border: 0; color: #000; font-size: 1.05em; font-weight: 500; letter-spacing: -.015em; }
+.header-title { display: inline-flex; min-width: 0; align-items: center; gap: .7em; border: 0; color: #000; font-size: 1.05em; font-weight: 500; letter-spacing: -.015em; }
+.header-title>span:last-child { line-height: 1.35; }
 .header-logos { display: inline-flex; align-items: center; gap: .22em; }
 .header-logos img, .footer-logos img { object-fit: contain; }
 .header-logos .logo-hnu, .footer-logos .logo-hnu { width: 38px; height: 38px; }
 .header-logos .logo-csee, .footer-logos .logo-csee { width: 49px; height: 49px; }
-.site-nav { display: flex; align-items: center; gap: 1.2em; }
+.site-nav { display: flex; flex-shrink: 0; align-items: center; gap: 1.2em; }
 .site-nav a { border-color: transparent; color: #222; font-size: .8em; font-weight: 500; letter-spacing: .02em; }
 .site-nav a:hover { border-bottom: 1px dotted #222; }
 .site-nav a[aria-current="page"] { border-bottom-color: currentColor; color: var(--hnu-red); }
@@ -162,7 +163,7 @@ button { font: inherit; }
 .course-info-list dt { color: var(--muted); }
 .course-info-list dd { margin: 0; }
 .course-description { max-width: 55em; margin: 2em 0 0; color: #333; font-size: 1.05em; line-height: 1.85; }
-.overview-hero h1 { text-align: center; }
+.overview-hero h1 { text-align: center; text-wrap: balance; }
 .course-info-section { margin: 4em 0 0; }
 .course-info-wrap { max-width: 55em; }
 .course-info-section h2 { margin-bottom: .7em; color: var(--xiang-blue); font-size: 1.9em; font-weight: 300; letter-spacing: -.02em; }
@@ -291,7 +292,9 @@ button { font: inherit; }
 @media (max-width: 680px) {
   .wrap { width: calc(100% - 36px); }
   .site-header { padding: 1.35em 0; }
-  .header-title { font-size: .95em; }
+  .header-inner { gap: 1em; }
+  .header-title { max-width: calc(100% - 3.5em); font-size: .82em; }
+  .header-title>span:last-child { display: block; max-width: 14em; }
   .header-logos .logo-hnu { width: 34px; height: 34px; }
   .header-logos .logo-csee { width: 43px; height: 43px; }
   .menu-button { display: block; }
