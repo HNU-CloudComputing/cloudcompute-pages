@@ -60,7 +60,8 @@ window.COURSE_CONFIG = {
     { id: "10", kind: "助教带做", title: "火焰图性能分析与 Lab 2 讲解", topics: ["pprof 与火焰图的使用", "程序热点与性能瓶颈定位", "Lab 2 并发任务讲解"], slides: "ppt4", slideLabel: "课件 4", thumbnail: "images/videos/lecture-10.jpg", duration: "26:41", url: "https://www.bilibili.com/video/BV1Zjgu6UEF1/" },
     { id: "11", kind: "课程讲授", title: "切分世界：数据分层存储与分布式导论", topics: ["账号、会话与世界状态的分层存储", "单机容量限制与多节点扩展", "分布式系统需要处理的基本问题"], slides: "ppt5", slideLabel: "课件 5", thumbnail: "images/videos/lecture-11.jpg", duration: "1:18:40", url: "https://www.bilibili.com/video/BV1iq8n6YEic/" },
     { id: "12", kind: "课程讲授", title: "切分世界：一致性哈希、Gossip 与 2PC", topics: ["一致性哈希与地图放置", "Gossip 成员状态传播", "跨节点交易与两阶段提交"], slides: "ppt5", slideLabel: "课件 5", thumbnail: "images/videos/lecture-12.jpg", duration: "1:26:59", url: "https://www.bilibili.com/video/BV19E8J6dEXY/" },
-    { id: "13", kind: "课程讲授", title: "切分世界：分布式一致性与 Raft", topics: ["分布式一致性问题", "Raft 选主与日志复制", "元数据提交与节点故障恢复"], slides: "ppt5", slideLabel: "课件 5", thumbnail: "images/videos/lecture-13.jpg", duration: "57:49", url: "https://www.bilibili.com/video/BV1vu8P6mEBB/" }
+    { id: "13", kind: "课程讲授", title: "切分世界：分布式一致性与 Raft", topics: ["分布式一致性问题", "Raft 选主与日志复制", "元数据提交与节点故障恢复"], slides: "ppt5", slideLabel: "课件 5", thumbnail: "images/videos/lecture-13.jpg", duration: "57:49", url: "https://www.bilibili.com/video/BV1vu8P6mEBB/" },
+    { id: "14", kind: "助教带做", title: "实验 3 切分世界讲解", topics: ["实验任务与 TODO 位置", "一致性哈希、Gossip、2PC 与 Raft 的实验实现", "自动测试、故障模拟与调试方法"], slides: "ppt5", slideLabel: "课件 5", thumbnail: "images/videos/lecture-14.jpg", duration: "10:10", url: "https://www.bilibili.com/video/BV1LM8P6EEsJ/" }
   ],
 
   labs: [
