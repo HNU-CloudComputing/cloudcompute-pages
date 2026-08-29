@@ -17,13 +17,15 @@ window.COURSE_CONFIG = {
     chapter4Book: "https://gitee.com/hnu-cloudcomputing/cloud-computing-book-pdf/blob/main/chapters/云计算技术实践_第四章.pdf",
     chapter5Book: "https://gitee.com/hnu-cloudcomputing/cloud-computing-book-pdf/blob/main/chapters/云计算技术实践_第五章.pdf",
     chapter6Book: "https://gitee.com/hnu-cloudcomputing/cloud-computing-book-pdf/blob/main/chapters/云计算技术实践_第六章.pdf",
-    ppt1: "https://raw.githubusercontent.com/HNU-CloudComputing/CloudComputingCoursePPT/main/1-引言.pptx",
-    ppt2: "https://raw.githubusercontent.com/HNU-CloudComputing/CloudComputingCoursePPT/main/2-创世之光-概览.pptx",
-    ppt3: "https://raw.githubusercontent.com/HNU-CloudComputing/CloudComputingCoursePPT/main/3-双雄对决-网络.pptx",
-    ppt4: "https://raw.githubusercontent.com/HNU-CloudComputing/CloudComputingCoursePPT/main/4-英雄集结-并发.pptx",
-    ppt5: "https://raw.githubusercontent.com/HNU-CloudComputing/CloudComputingCoursePPT/main/5-裂土封疆-分布式.pptx",
-    ppt6: "https://raw.githubusercontent.com/HNU-CloudComputing/CloudComputingCoursePPT/main/6-飞升入定-部署.pptx",
-    ppt7: "https://raw.githubusercontent.com/HNU-CloudComputing/CloudComputingCoursePPT/main/7-穷理尽微-核心原理与前沿研究.pptx",
+    ppt1: "https://media.githubusercontent.com/media/HNU-CloudComputing/CloudComputingCoursePPT/main/1-引言.pptx",
+    ppt2: "https://media.githubusercontent.com/media/HNU-CloudComputing/CloudComputingCoursePPT/main/2-创世之光-概览.pptx",
+    ppt3: "https://media.githubusercontent.com/media/HNU-CloudComputing/CloudComputingCoursePPT/main/3-双雄对决-网络.pptx",
+    ppt4: "https://media.githubusercontent.com/media/HNU-CloudComputing/CloudComputingCoursePPT/main/4-英雄集结-并发.pptx",
+    ppt5: "https://media.githubusercontent.com/media/HNU-CloudComputing/CloudComputingCoursePPT/main/5-裂土封疆-分布式.pptx",
+    ppt6: "https://media.githubusercontent.com/media/HNU-CloudComputing/CloudComputingCoursePPT/main/6-飞升入定-部署.pptx",
+    ppt7: "https://media.githubusercontent.com/media/HNU-CloudComputing/CloudComputingCoursePPT/main/7-穷理尽微-核心原理与前沿研究.pptx",
+    ppt8: "https://media.githubusercontent.com/media/HNU-CloudComputing/CloudComputingCoursePPT/main/助教带做-Docker上云实战.pptx",
+    ppt9: "https://media.githubusercontent.com/media/HNU-CloudComputing/CloudComputingCoursePPT/main/助教带做-k8s使用.pptx",
     video1: "https://www.bilibili.com/video/BV1Jngs6wEjR/",
     video2: "https://www.bilibili.com/video/BV1P3gs6uEF3/",
     video3: "https://www.bilibili.com/video/BV1MFgw67Eet/",
@@ -45,6 +47,11 @@ window.COURSE_CONFIG = {
     { title: "切分世界：分布式系统", link: "chapter4Book" },
     { title: "飞升入定：云原生部署", link: "chapter5Book" },
     { title: "穷理尽微：云原生核心原理", link: "chapter6Book" }
+  ],
+
+  supplementarySlides: [
+    { id: "08", title: "助教带做：Docker 上云实战", link: "ppt8" },
+    { id: "09", title: "助教带做：Kubernetes 使用", link: "ppt9" }
   ],
 
   videos: [

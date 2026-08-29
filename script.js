@@ -87,9 +87,13 @@ function renderLibraries() {
   const slides = document.querySelector('#slide-list');
   const books = document.querySelector('#book-chapter-list');
   if (slides) {
-    slides.innerHTML = config.chapters.map((chapter) => simpleItem(
+    const chapterSlides = config.chapters.map((chapter) => simpleItem(
       String(chapter.id).padStart(2, '0'), chapter.subtitle, 'ppt' + chapter.id, '下载'
-    )).join('');
+    ));
+    const supplementarySlides = (config.supplementarySlides || []).map((slide) => simpleItem(
+      slide.id, slide.title, slide.link, '下载'
+    ));
+    slides.innerHTML = chapterSlides.concat(supplementarySlides).join('');
   }
   if (books) {
     books.innerHTML = config.books.map((book, index) => simpleItem(
