@@ -97,7 +97,7 @@ function renderLibraries() {
   }
   if (books) {
     books.innerHTML = config.books.map((book, index) => simpleItem(
-      String(index + 1).padStart(2, '0'), book.title, book.link, '阅读'
+      book.id || String(index + 1).padStart(2, '0'), book.title, book.link, '阅读'
     )).join('');
   }
 }

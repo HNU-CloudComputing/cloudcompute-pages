@@ -266,6 +266,8 @@ button { font: inherit; }
 .material-grid>article:nth-child(3) { border-top: 3px solid var(--xiang-blue); }
 .material-grid h2 { margin-bottom: .4em; font-size: 1.5em; font-weight: 300; }
 .material-grid>article>p { color: #555; }
+.material-links { display: flex; flex-wrap: wrap; gap: .45em 1.2em; }
+.material-links a { white-space: nowrap; }
 .simple-list { margin-top: 1.2em; border-top: 1px solid var(--line); }
 .simple-item { display: grid; grid-template-columns: 2em 1fr auto; gap: .6em; align-items: center; min-height: 3.3em; border-bottom: 1px solid var(--line); color: #333; }
 .simple-item b { color: #aaa; font-size: .75em; font-weight: 400; }
