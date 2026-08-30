@@ -71,7 +71,7 @@ HNU-cloudcomputing 是**湖南大学**计算机学院云计算课程组维护的
 | [教材 Markdown 在线阅读](https://hnu-cloudcomputing.github.io/CloudComputingMarkdown/) | 在线阅读 Markdown 版教材 |
 | [教材 PDF 在线阅读](https://hnu-cloudcomputing.github.io/CloudComputingPDF/) | 在线阅读 PDF 版教材 |
 | [课程示例代码与实验](https://gitee.com/hnu-cloudcomputing/cloud-compute-book-code) | 教材示例、课程实验、运行说明与自动测试 |
-| [课程课件](https://gitee.com/hnu-cloudcomputing/cloud-compute-slides) | 课堂讲授课件 |
+| [课程课件](https://github.com/HNU-CloudComputing/CloudComputingCoursePPT) | 课堂讲授课件 |
 | [教学视频](https://space.bilibili.com/472679948/lists?sid=8828254) | 课程讲授与助教带做视频 |
 
 ## 参与与联系
